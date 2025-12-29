@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atrapa Estrellas para Miri ✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --amarillo: #f2cb05;
+            --azul-oscuro: #0b1e3b;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Importante para el juego */
+            font-family: 'Montserrat', sans-serif;
+            background-image: url('Gemini_Generated_Image_6hi8246hi8246hi8.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(10, 18, 42, 0.6);
+            z-index: 1;
+        }
+
+        /* Interfaz del juego */
+        #game-ui {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 20px;
+            pointer-events: none;
+        }
+
+        h1 { font-family: 'Great Vibes', cursive; font-size: 3rem; color: var(--amarillo); margin: 0; }
+        #score-board { font-size: 1.5rem; font-weight: 600; }
+
+        /* Estrellas cayendo */
+        .falling-star {
+            position: absolute;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 5;
+            user-select: none;
+            transition: transform 0.1s;
+        }
+
+        /* Mensaje Final */
+        #final-msg {
+            display: none;
+            position: fixed;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 30px;
+            border: 2px solid var(--amarillo);
+            text-align: center;
+            z-index: 100;
+            max-width: 80%;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            background: var(--amarillo);
+            color: var(--azul-oscuro);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay"></div>
+
+    <div id="game-ui">
+        <h1>Atrapa 10 estrellas para tu sorpresa</h1>
+        <div id="score-board">Estrellas: <span id="score">0</span> / 10</div>
+    </div>
+
+    <div id="final-msg">
+        <h2 style="font-family: 'Great Vibes', cursive; font-size: 3.5rem; color: var(--amarillo);">¡Lo lograste! ✨</h2>
+        <p>Cada estrella que atrapaste representa un deseo que tengo para ti este año.</p>
+        <p><strong>"Nunca dejes de brillar, mi abanderada favorita, besitos telepaticos muak muak."</strong></p>
+        <a href="index.html" class="btn-back">Volver al inicio</a>
+    </div>
+
+    <script>
+        let score = 0;
+        const scoreDisplay = document.getElementById('score');
+        const finalMsg = document.getElementById('final-msg');
+        const goal = 10;
+
+        function createStar() {
+            if (score >= goal) return;
+
+            const star = document.createElement('div');
+            star.className = 'falling-star';
+            star.innerHTML = '⭐';
+            star.style.left = Math.random() * 90 + 'vw';
+            star.style.top = '-50px';
+            
+            // Velocidad aleatoria
+            const duration = Math.random() * 3 + 2;
+            star.style.transition = `top ${duration}s linear`;
+
+            document.body.appendChild(star);
+
+            // Iniciar caída
+            setTimeout(() => {
+                star.style.top = '110vh';
+            }, 100);
+
+            // Click en estrella
+            star.onclick = () => {
+                score++;
+                scoreDisplay.innerText = score;
+                star.innerHTML = '✨';
+                star.style.transform = 'scale(2)';
+                star.style.opacity = '0';
+                setTimeout(() => star.remove(), 300);
+
+                if (score === goal) {
+                    showFinalMessage();
+                }
+            };
+
+            // Remover si llega al final sin ser clickeada
+            setTimeout(() => {
+                if(star.parentNode) star.remove();
+            }, duration * 1000);
+        }
+
+        function showFinalMessage() {
+            finalMsg.style.display = 'block';
+            // Detener creación de estrellas
+            clearInterval(gameInterval);
+        }
+
+        const gameInterval = setInterval(createStar, 800);
+    </script>
+</body>
+</html>

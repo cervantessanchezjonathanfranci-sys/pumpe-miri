@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Razones para quererte - Miri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --amarillo-vangogh: #f2cb05;
+            --dorado: #d9a407;
+            --blanco-suave: #f0f0f0;
+            --azul-noche: #0b1e3b;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--blanco-suave);
+            background-image: url('Gemini_Generated_Image_6hi8246hi8246hi8.png'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 18, 42, 0.75);
+            z-index: -1;
+        }
+
+        header {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4.5rem;
+            color: var(--amarillo-vangogh);
+            text-shadow: 0 0 20px rgba(242, 203, 5, 0.6);
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            background: rgba(255, 255, 255, 0.07);
+            padding: 40px;
+            border-radius: 30px;
+            border: 1px solid rgba(242, 203, 5, 0.3);
+            backdrop-filter: blur(12px);
+        }
+
+        /* Estilo de la lista */
+        .reasons-list {
+            column-count: 2; /* Divide las razones en dos columnas */
+            column-gap: 40px;
+            list-style: none;
+            padding: 0;
+            counter-reset: reason-counter;
+        }
+
+        .reasons-list li {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            position: relative;
+            padding-left: 35px;
+            break-inside: avoid;
+        }
+
+        .reasons-list li::before {
+            counter-increment: reason-counter;
+            content: counter(reason-counter);
+            position: absolute;
+            left: 0;
+            color: var(--amarillo-vangogh);
+            font-weight: 600;
+            font-size: 0.8rem;
+            border: 1px solid var(--amarillo-vangogh);
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* La razón final */
+        .final-reason {
+            margin-top: 50px;
+            padding: 30px;
+            background: rgba(242, 203, 5, 0.1);
+            border: 2px dashed var(--amarillo-vangogh);
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .final-reason h3 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: var(--amarillo-vangogh);
+            margin-bottom: 10px;
+        }
+
+        .final-reason p {
+            font-size: 1.4rem;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .nav-buttons {
+            text-align: center;
+            padding-bottom: 80px;
+        }
+
+        .btn {
+            text-decoration: none;
+            color: var(--azul-noche);
+            background: var(--amarillo-vangogh);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background: white;
+        }
+
+        @media (max-width: 600px) {
+            .reasons-list { column-count: 1; }
+            h1 { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay"></div>
+
+    <header>
+        <h1>100 Razones para quererte</h1>
+        <p>Y una pequeña verdad...</p>
+    </header>
+
+    <div class="container">
+        <ul class="reasons-list">
+            <li>Tu sonrisa que ilumina todo.</li>
+            <li>Tu fuerza ante los problemas.</li>
+            <li>Tu inteligencia brillante.</li>
+            <li>Lo valiente que eres cada día.</li>
+            <li>Cómo me haces sentir especial.</li>
+            <li>Tu manera de ver el mundo.</li>
+            <li>Eres mi abanderada favorita.</li>
+            <li>Tu risa contagiosa.</li>
+            <li>Cómo me escuchas siempre.</li>
+            <li>Tu paciencia infinita.</li>
+            <li>Tu honestidad.</li>
+            <li>Tus ganas de salir adelante.</li>
+            <li>Tu forma de brillar sin intentarlo.</li>
+            <li>Lo bien que me la paso contigo.</li>
+            <li>Tu apoyo incondicional.</li>
+            <li>Por cómo cuidas a los tuyos.</li>
+            <li>Por ser mi estrellitap.</li>
+            <li>Tu humildad.</li>
+            <li>Por esos mensajes que me alegran.</li>
+            <li>Por caminar a pasos de tortuga conmigo.</li>
+            <li>Tu determinación.</li>
+            <li>Por ser una niña única.</li>
+            <li>Tu sencillez.</li>
+            <li>Por confiar en mí.</li>
+            <li>Por dejarme conocerte.</li>
+            <li>Tu autenticidad.</li>
+            <li>Por no rendirte nunca.</li>
+            <li>Por tus sueños y metas.</li>
+            <li>Por cómo enfrentas tus miedos.</li>
+            <li>Por ser mi persona favorita.</li>
+            <li>Por cada momento compartido.</li>
+            <li>Por tu luz en mis días grises.</li>
+            <li>Por ser tan tú.</li>
+            <li>Por tu madurez.</li>
+            <li>Por tu gran corazón.</li>
+            <li>Por cómo me inspiras.</li>
+            <li>Por ser fuerte incluso cuando te sientes débil.</li>
+            <li>Por tu mirada.</li>
+            <li>Por tu voz.</li>
+            <li>Por ser mi apoyo en las malas.</li>
+            <li>Por celebrar mis triunfos.</li>
+            <li>Por ser arte.</li>
+            <li>Por brillar en la oscuridad.</li>
+            <li>Por ser mi tranquilidad.</li>
+            <li>Por tus ocurrencias.</li>
+            <li>Por tu compañía.</li>
+            <li>Por ser mi mejor casualidad.</li>
+            <li>Por lo mucho que me importas.</li>
+            <li>Por hacerme mejor persona.</li>
+            <li>Por ser Miri.</li>
+            <li>Por cómo hablas de lo que te gusta.</li>
+            <li>Por tus consejos.</li>
+            <li>Por tu empatía.</li>
+            <li>Por hacerme reír sin sentido.</li>
+            <li>Por ser mi refugio.</li>
+            <li>Por cada palabra de aliento.</li>
+            <li>Por tu ternura escondida.</li>
+            <li>Por ser mi inspiración de Van Gogh.</li>
+            <li>Por tu energía.</li>
+            <li>Porque eres increíble.</li>
+            <li>Por tu sabiduría.</li>
+            <li>Por ser constante.</li>
+            <li>Por tu creatividad.</li>
+            <li>Por ser luz.</li>
+            <li>Por tu lealtad.</li>
+            <li>Por ser una guerrera.</li>
+            <li>Por tu magia.</li>
+            <li>Por tu esencia.</li>
+            <li>Por ser mi pensamiento favorito.</li>
+            <li>Por tu bondad.</li>
+            <li>Por ser mi abanderada del alma.</li>
+            <li>Por tu calma.</li>
+            <li>Por tus ganas de comerte el mundo.</li>
+            <li>Por ser mi motivo para sonreír.</li>
+            <li>Por tu alegría.</li>
+            <li>Por ser auténtica.</li>
+            <li>Por tu fuego interior.</li>
+            <li>Por ser mi norte.</li>
+            <li>Por estar en mi vida.</li>
+            <li>Por tu valentía ante la vida.</li>
+            <li>Por ser dulce.</li>
+            <li>Por tu firmeza.</li>
+            <li>Por ser una estrella real.</li>
+            <li>Por tu compañía constante.</li>
+            <li>Por ser mi motor.</li>
+            <li>Por tu curiosidad.</li>
+            <li>Por tu brillo propio.</li>
+            <li>Por ser la dueña de mis suspiros.</li>
+            <li>Por ser especial.</li>
+            <li>Por ser única en el universo.</li>
+            <li>Por tus valores.</li>
+            <li>Por ser tú misma conmigo.</li>
+            <li>Por tu amor a la vida.</li>
+            <li>Por ser mi pedacito de cielo.</li>
+            <li>Por tu carisma.</li>
+            <li>Por ser inolvidable.</li>
+            <li>Por tu paz.</li>
+            <li>Por ser mi regalo este año.</li>
+            <li>Por existir.</li>
+            <li>Por ser simplemente tú.</li>
+        </ul>
+
+        <div class="final-reason">
+            <h3>Y   1 razón para irme...</h3>
+            <p>"No existe ninguna razón en este universo para alejarme de ti."</p>
+        </div>
+    </div>
+
+    <div class="nav-buttons">
+        <a href="cumple.html" class="btn">carta</a>
+          <a href="index.html" class="btn">Volver al Inicio</a>
+         <a href="inte.html" class="btn">Atrapa Estrellas</a>
+         <a href="tequiero.html" class="btn">te quieroo muchotee</a>
+    </div>
+
+    <footer>
+        Con todo mi cariño, hoy y siempre | Miri ✨
+    </footer>
+
+</body>
+</html>

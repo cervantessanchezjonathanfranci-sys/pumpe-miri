@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Universo de Miri ✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --amarillo-vangogh: #f2cb05;
+            --dorado: #d9a407;
+            --blanco-suave: #f0f0f0;
+            --azul-boton: #1a3a5c;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--blanco-suave);
+            overflow: hidden; /* Evita el scroll en el inicio */
+        }
+
+        /* Fondo principal con tu imagen */
+        .bg-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('noche.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+        }
+
+        /* Capa de contraste */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(10, 18, 42, 0.4) 0%, rgba(10, 18, 42, 0.8) 100%);
+            z-index: -1;
+        }
+
+        /* Contenedor principal */
+        .main-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .welcome-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 50px;
+            border-radius: 40px;
+            border: 1px solid rgba(242, 203, 5, 0.3);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            max-width: 600px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            color: var(--amarillo-vangogh);
+            margin: 0;
+            text-shadow: 0 0 20px rgba(242, 203, 5, 0.5);
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            margin: 20px 0 40px 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+
+        /* Menú de navegación */
+        .menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .nav-card {
+            text-decoration: none;
+            color: var(--azul-boton);
+            background: var(--amarillo-vangogh);
+            padding: 18px;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-card:hover {
+            transform: scale(1.05);
+            background: white;
+            color: #000;
+            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-card span {
+            font-size: 1.2rem;
+        }
+
+        /* Estrellitas animadas (decoración) */
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: twinkle var(--duration) infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 3.5rem; }
+            .welcome-box { padding: 30px; margin: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-image"></div>
+    <div class="overlay"></div>
+
+    <div class="main-container">
+        <div class="welcome-box">
+            <h1>Miri</h1>
+            <p class="intro-text">Bienvenida a tu rincón estrellado</p>
+            
+            <nav class="menu-links">
+                <a href="cumple.html" class="nav-card">
+                    💌 Mi carta para ti
+                    <span>→</span>
+                </a>
+                <a href="tequiero.html" class="nav-card">
+                    🌍 Te quiero en el mundo
+                    <span>→</span>
+                </a>
+                <a href="razones.html" class="nav-card">
+                    ✨ 100 Razones
+                    <span>→</span>
+                </a>
+
+                <a href="inte.html" class="nav-card">
+                   Atrapa Estrellas
+                    <span>→</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        for (let i = 0; i < 50; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 3 + 'px';
+            star.style.width = size;
+            star.style.height = size;
+            star.style.top = Math.random() * 100 + 'vh';
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.setProperty('--duration', Math.random() * 3 + 2 + 's');
+            document.body.appendChild(star);
+        }
+    </script>
+
+</body>
+</html>

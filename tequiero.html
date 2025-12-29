@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Veces Te Quiero - Miri ✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --amarillo-vangogh: #f2cb05;
+            --dorado: #d9a407;
+            --blanco-suave: #f0f0f0;
+            --azul-boton: #1a3a5c;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--blanco-suave);
+            background-image: url('Gemini_Generated_Image_6hi8246hi8246hi8.png'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 18, 42, 0.8);
+            z-index: -1;
+        }
+
+        header {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4.5rem;
+            color: var(--amarillo-vangogh);
+            text-shadow: 0 0 20px rgba(242, 203, 5, 0.6);
+            margin: 0;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto 50px auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 30px;
+            border: 1px solid rgba(242, 203, 5, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Cuadrícula de idiomas */
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .lang-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .lang-card:hover {
+            transform: translateY(-5px);
+            background: rgba(242, 203, 5, 0.1);
+            border-color: var(--amarillo-vangogh);
+        }
+
+        .lang-name {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--dorado);
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .phrase {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.4rem;
+            display: block;
+        }
+
+        .nav-buttons {
+            text-align: center;
+            padding: 40px 0 80px 0;
+        }
+
+        .btn {
+            text-decoration: none;
+            color: #000;
+            background: var(--amarillo-vangogh);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background: white;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 3rem; }
+            .languages-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .phrase { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay"></div>
+
+    <header>
+        <h1>100 veces Miri</h1>
+        <p class="subtitle">Un sentimiento, cien lenguajes</p>
+    </header>
+
+    <div class="container">
+        <div class="languages-grid" id="langGrid">
+            </div>
+    </div>
+
+    <div class="nav-buttons">
+        <a href="index.html" class="btn">⬅ Volver al Inicio</a>
+        <a href="cumple.html" class="btn">Carta</a>
+        <a href="razones.html" class="btn">100 razones</a>
+         <a href="inte.html" class="btn">Atrapa Estrellas</a>
+    </div>
+   
+
+    <footer>
+        <center><p style="opacity: 0.5; padding-bottom: 20px;">Porque decirte que te quiero nunca es suficiente.</p></center>
+    </footer>
+
+    <script>
+        const translations = [
+            {l: "Español", p: "Te quiero mucho, Miri"},
+            {l: "Inglés", p: "I love you so much, Miri"},
+            {l: "Francés", p: "Je t'aime énormément, Miri"},
+            {l: "Italiano", p: "Ti voglio tanto bene, Miri"},
+            {l: "Alemán", p: "Ich liebe dich sehr, Miri"},
+            {l: "Portugués", p: "Eu te amo muito, Miri"},
+            {l: "Ruso", p: "Ya tebya lyublyu, Miri"},
+            {l: "Japonés", p: "Daisuki da yo, Miri"},
+            {l: "Coreano", p: "Saranghae, Miri"},
+            {l: "Chino", p: "Wo ai ni, Miri"},
+            {l: "Árabe", p: "Uhibbuki jiddan, Miri"},
+            {l: "Griego", p: "S'agapo poli, Miri"},
+            {l: "Holandés", p: "Ik hou van jou, Miri"},
+            {l: "Sueco", p: "Jag älskar dig, Miri"},
+            {l: "Noruego", p: "Jeg elsker deg, Miri"},
+            {l: "Danés", p: "Jeg elsker dig, Miri"},
+            {l: "Finlandés", p: "Minä rakastan sinua, Miri"},
+            {l: "Turco", p: "Seni cok seviyorum, Miri"},
+            {l: "Polaco", p: "Kocham Cie, Miri"},
+            {l: "Húngaro", p: "Szeretlek, Miri"},
+            {l: "Checo", p: "Miluji te, Miri"},
+            {l: "Rumano", p: "Te iubesc mult, Miri"},
+            {l: "Catalán", p: "T'estimo molt, Miri"},
+            {l: "Euskera", p: "Maite zaitut, Miri"},
+            {l: "Gallego", p: "Quéroche moito, Miri"},
+            {l: "Latín", p: "Te valde amo, Miri"},
+            {l: "Esperanto", p: "Mi amas vin, Miri"},
+            {l: "Hindi", p: "Main tumse pyar karta hoon, Miri"},
+            {l: "Tailandés", p: "Phom rak khun, Miri"},
+            {l: "Vietnamita", p: "Anh yêu em, Miri"},
+            {l: "Tagalo", p: "Mahal kita, Miri"},
+            {l: "Indonesio", p: "Aku cinta kamu, Miri"},
+            {l: "Malayo", p: "Saya sayang awak, Miri"},
+            {l: "Hebreo", p: "Ani ohev otach, Miri"},
+            {l: "Persa", p: "Doset daram, Miri"},
+            {l: "Swahili", p: "Nakupenda sana, Miri"},
+            {l: "Afrikáans", p: "Ek het jou lief, Miri"},
+            {l: "Islandés", p: "Ég elska þig, Miri"},
+            {l: "Irlandés", p: "Is breá liom tú, Miri"},
+            {l: "Galés", p: "Rwy'n dy garu di, Miri"},
+            {l: "Escocés", p: "Tha gaol agam ort, Miri"},
+            {l: "Ucraniano", p: "Ya tebe lyublyu, Miri"},
+            {l: "Búlgaro", p: "Obicham te, Miri"},
+            {l: "Serbio", p: "Volim te, Miri"},
+            {l: "Croata", p: "Volim te, Miri"},
+            {l: "Esloveno", p: "Ljubim te, Miri"},
+            {l: "Eslovaco", p: "Lubim ta, Miri"},
+            {l: "Estonio", p: "Ma armastan sind, Miri"},
+            {l: "Letón", p: "Es tevi milu, Miri"},
+            {l: "Lituano", p: "As tave myliu, Miri"},
+            {l: "Albanés", p: "Te dua, Miri"},
+            {l: "Macedonio", p: "Te sakam, Miri"},
+            {l: "Armenio", p: "Yes kez sirum yem, Miri"},
+            {l: "Georgiano", p: "Me shen miqvarxar, Miri"},
+            {l: "Azerbaiyano", p: "Mən səni sevirəm, Miri"},
+            {l: "Kazajo", p: "Men seni jaqsı köremin, Miri"},
+            {l: "Uzbeko", p: "Men seni sevaman, Miri"},
+            {l: "Mongol", p: "Bi chamd khayrtay, Miri"},
+            {l: "Nepalí", p: "Ma timilai maya garchu, Miri"},
+            {l: "Bengalí", p: "Ami tomake bhalobashi, Miri"},
+            {l: "Punjabi", p: "Mai tainu pyar karda ha, Miri"},
+            {l: "Gujarati", p: "Hu tane prem karu chu, Miri"},
+            {l: "Tamil", p: "Naan unnai kadhalikkiren, Miri"},
+            {l: "Telugu", p: "Nenu ninnu premistunnanu, Miri"},
+            {l: "Canarés", p: "Naanu ninnanu prithisuthene, Miri"},
+            {l: "Malayalam", p: "Njan ninne mohikkunnu, Miri"},
+            {l: "Cingalés", p: "Mama oyata adareyi, Miri"},
+            {l: "Birmano", p: "Chit pa de, Miri"},
+            {l: "Jemer", p: "Soro lanh nhee, Miri"},
+            {l: "Lao", p: "Khon hak chao, Miri"},
+            {l: "Zulú", p: "Ngiyakuthanda, Miri"},
+            {l: "Xhosa", p: "Ndiyaguthanda, Miri"},
+            {l: "Yoruba", p: "Mo ni fe re, Miri"},
+            {l: "Igbo", p: "Afurum gi nanya, Miri"},
+            {l: "Amárico", p: "Ewedishalehu, Miri"},
+            {l: "Somalí", p: "Wa ku jecelahay, Miri"},
+            {l: "Maorí", p: "Aroha ana ahau ki a koe, Miri"},
+            {l: "Samoano", p: "Ou te alofa ia te oe, Miri"},
+            {l: "Fiyiano", p: "Au lomani iko, Miri"},
+            {l: "Hawaiiano", p: "Aloha wau ia 'oe, Miri"},
+            {l: "Quechua", p: "Cuyayquim, Miri"},
+            {l: "Guaraní", p: "Rohayhu, Miri"},
+            {l: "Náhuatl", p: "Ni mits tlayotla, Miri"},
+            {l: "Maya", p: "In yaakumech, Miri"},
+            {l: "Luxemburgués", p: "Ech hun dech gär, Miri"},
+            {l: "Bretón", p: "Da garout a ran, Miri"},
+            {l: "Córnico", p: "My a'th kar, Miri"},
+            {l: "Leonés", p: "Quiérote un carapiellu, Miri"},
+            {l: "Aragonés", p: "Te quiero muito, Miri"},
+            {l: "Élfico (Quenya)", p: "Melinyë, Miri"},
+            {l: "Élfico (Sindarin)", p: "Gellon nî, Miri"},
+            {l: "Klingon", p: "bangwI' SoH, Miri"},
+            {l: "Dothraki", p: "Anha zhilak yera, Miri"},
+            {l: "Alto Valyrio", p: "Avy jorrāelan, Miri"},
+            {l: "Náhuatl", p: "Ni mits tlayotla, Miri"},
+            {l: "Aymara", p: "Munasmawa, Miri"},
+            {l: "Quechua (Cusco)", p: "Munayqui, Miri"},
+            {l: "Mapudungun", p: "Piwkeyeyu, Miri"},
+            {l: "Bari", p: "Nan nyat tiri, Miri"},
+            {l: "Sánscrito", p: "Tvayi snihyāmi, Miri"}
+        ];
+
+        const grid = document.getElementById('langGrid');
+        translations.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'lang-card';
+            card.innerHTML = `<span class="lang-name">${item.l}</span><span class="phrase">${item.p}</span>`;
+            grid.appendChild(card);
+        });
+    </script>
+</body>
+</html>
