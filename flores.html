@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jardín Mágico - Miri</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: #000;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .night-sky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #001220, #004e92);
+            z-index: -1;
+        }
+
+        .flower-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            padding-bottom: 20px;
+        }
+
+        .flower {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform-origin: bottom;
+            animation: sway 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes sway {
+            from { transform: rotate(-2deg); }
+            to { transform: rotate(2deg); }
+        }
+
+        .stem {
+            width: 10px;
+            height: var(--h);
+            background: linear-gradient(to top, #1a4d2e, #4f6f52);
+            border-radius: 5px;
+        }
+
+        .leaf {
+            position: absolute;
+            width: 30px;
+            height: 15px;
+            background: #2d5a27;
+            border-radius: 50% 0;
+            top: 40%;
+        }
+
+        .leaf-right { left: 10px; transform: rotate(20deg); }
+        .leaf-left { right: 10px; transform: rotate(-110deg); }
+
+        .petals-container {
+            position: relative;
+            width: 0;
+            height: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: bloom 2s forwards;
+            animation-delay: var(--d);
+        }
+
+        @keyframes bloom {
+            to { transform: scale(1); width: 80px; height: 80px; }
+        }
+
+        .petal {
+            position: absolute;
+            width: 40px;
+            height: 70px;
+            background: var(--c);
+            border-radius: 50%;
+            opacity: 0.8;
+            filter: drop-shadow(0 0 5px rgba(255,255,255,0.3));
+        }
+
+        .center {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: #fdbb2d;
+            border-radius: 50%;
+            z-index: 10;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        .btn-nav {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="btn-nav">⬅ Regresar</a>
+    <div class="night-sky"></div>
+    <div class="flower-container" id="garden"></div>
+
+    <script>
+        const garden = document.getElementById('garden');
+        const colors = ['#ff7eb9', '#ff65a3', '#e0b0ff', '#ffffff', '#ff9a9e', '#fecfef'];
+
+        function createFlower() {
+            const flower = document.createElement('div');
+            flower.className = 'flower';
+            
+            const height = Math.random() * 250 + 150;
+            const delay = Math.random() * 2;
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            
+            flower.style.setProperty('--h', height + 'px');
+            flower.style.setProperty('--d', delay + 's');
+
+            const petalsContainer = document.createElement('div');
+            petalsContainer.className = 'petals-container';
+            petalsContainer.style.setProperty('--c', color);
+
+            for (let i = 0; i < 8; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                petal.style.transform = `rotate(${i * 45}deg) translateY(-30px)`;
+                petalsContainer.appendChild(petal);
+            }
+
+            const center = document.createElement('div');
+            center.className = 'center';
+            petalsContainer.appendChild(center);
+
+            const stem = document.createElement('div');
+            stem.className = 'stem';
+
+            const leaf1 = document.createElement('div');
+            leaf1.className = 'leaf leaf-right';
+            const leaf2 = document.createElement('div');
+            leaf2.className = 'leaf leaf-left';
+            
+            stem.appendChild(leaf1);
+            stem.appendChild(leaf2);
+
+            flower.appendChild(petalsContainer);
+            flower.appendChild(stem);
+            garden.appendChild(flower);
+        }
+
+        for (let i = 0; i < 12; i++) {
+            createFlower();
+        }
+    </script>
+</body>
+</html>
